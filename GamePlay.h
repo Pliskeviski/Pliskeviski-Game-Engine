@@ -1,18 +1,25 @@
 #pragma once
+
 #include <iostream>
 #include <vector>
 
-#include <glm\glm.hpp>
-#include <glm\gtc\matrix_transform.hpp>
-#include <glm\gtc\type_ptr.hpp>
-
-#include "controls.hpp"
-#include "Scene.h"
-#include "Texture.h"
-#include "Shader.h"
+#include "Core\Scene.h"
+#include "Core\CubeMap.h"
+#include "Core\Texture.h"
+#include "Core\Object.h"
+#include "Core\Camera.h"
 
 class GamePlay {
 public:
-	void Start();
-};
+	GamePlay();
+	void Update();
+private:
+	Scene* scene;
+	Shader* scene_shader;
 
+	Object* Gun;
+	Object* cube;
+
+	Light* light;
+	Light* light_2;
+};
